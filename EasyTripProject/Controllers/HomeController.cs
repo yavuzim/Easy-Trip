@@ -32,7 +32,7 @@ namespace EasyTripProject.Controllers
         }
         public PartialViewResult PartialBlogs()
         {
-            var items = contextDb.Blogs.ToList();
+            var items = contextDb.Blogs.Take(10).ToList();
             return PartialView(items);
         }
         public PartialViewResult OurBestPlaces()

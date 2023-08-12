@@ -1,0 +1,32 @@
+﻿@using EasyTripProject.Models.Entities
+@model List<Blog>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div style="margin: 10px 0 10px 0">
+    <h2>Blog Listesi</h2>
+    <table class="table table-bordered">
+        <tr>
+            <th>ID</th>
+            <th>Başlık</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+            <th>Detay</th>
+        </tr>
+        @{
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.BlogId</td>
+                    <td>@item.Title</td>
+                    <td><a href="/Admin/BlogDelete?BlogId=@item.BlogId" class="btn btn-danger">Sil</a></td>
+                    <td><a href="/Admin/GetBlog?BlogId=@item.BlogId" class="btn btn-info" style="color:white">Güncelle</a></td>
+                    <td><a href="/Blog/BlogDetail/@item.BlogId" target="_blank"  class="btn btn-primary">Detay</a></td>
+                </tr>
+            }
+        }
+
+    </table>
+    <a href="/Admin/NewBlog/" class="btn btn-primary">Yeni Blog</a>
+</div>

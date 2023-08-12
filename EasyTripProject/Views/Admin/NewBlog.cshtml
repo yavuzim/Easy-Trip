@@ -1,0 +1,23 @@
+﻿@model EasyTripProject.Models.Entities.Blog
+@{
+    ViewBag.Title = "NewBlog";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yeni Blog Ekleme</h2>
+<br />
+<form class="form-group" method="post">
+    @Html.LabelForModel("Başlık")
+    @Html.TextBoxFor(p => p.Title, new { @class = "form-control" })
+    <br />
+    @Html.LabelForModel("Tarih")
+    @Html.TextBoxFor(p => p.Date, new { @class = "form-control" })
+    <br />
+    @Html.LabelForModel("Görsel")
+    @Html.TextBoxFor(p => p.BlogImage, new { @class = "form-control" })
+    <br />
+    @Html.LabelForModel("Açıklama")
+    @Html.TextAreaFor(p => p.Description, new { @class = "form-control", @style = "height:200px" })
+    <br />
+    <button type="submit" class="btn btn-primary">Blog Ekle</button>
+</form>

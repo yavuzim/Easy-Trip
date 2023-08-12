@@ -1,0 +1,28 @@
+﻿@model EasyTripProject.Models.Entities.Blog
+@{
+    ViewBag.Title = "GetBlog";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h4>Blog Güncelleme Sayfası</h4>
+<br />
+@using (Html.BeginForm("BlogUpdate", "Admin", FormMethod.Post))
+{
+    <b>@Html.LabelForModel("ID")</b>
+    @Html.TextBoxFor(p => p.BlogId, new { @class = "form-control", @readonly = "readonly" }) // @readonly = "readonly"  : textbox enabled=false oldu.
+    <br />
+    <b>@Html.LabelForModel("Başlık")</b>
+    @Html.TextBoxFor(p => p.Title, new { @class = "form-control" })
+    <br />
+    <b>@Html.LabelForModel("Tarih")</b>
+    @Html.TextBoxFor(p => p.Date, new { @class = "form-control" })
+    <br />
+    <b>@Html.LabelForModel("Görsel")</b>
+    @Html.TextBoxFor(p => p.BlogImage, new { @class = "form-control" })
+    <br />
+    <b>@Html.LabelForModel("Açıklama")</b>
+    @Html.TextAreaFor(p => p.Description, 15, 1, new { @class = "form-control" }) // 15 satır, 1 sütun
+    <br />
+    <button type="submit" class="btn btn-primary" style="margin-bottom:25px">Blog Güncelle</button>
+}
+

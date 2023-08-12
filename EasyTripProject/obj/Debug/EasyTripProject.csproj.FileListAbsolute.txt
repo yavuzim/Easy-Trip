@@ -164,3 +164,5 @@ C:\Users\USER\Desktop\Easy-Trip\EasyTripProject\obj\Debug\EasyTripProject.csproj
 C:\Users\USER\Desktop\Easy-Trip\EasyTripProject\obj\Debug\EasyTripProject.csproj.CopyComplete
 C:\Users\USER\Desktop\Easy-Trip\EasyTripProject\obj\Debug\EasyTripProject.dll
 C:\Users\USER\Desktop\Easy-Trip\EasyTripProject\obj\Debug\EasyTripProject.pdb
+C:\Users\USER\Desktop\Easy-Trip\EasyTripProject\obj\Debug\EasyTripProject.Migrations.CreateAdminTable.resources
+C:\Users\USER\Desktop\Easy-Trip\EasyTripProject\obj\Debug\EasyTripProject.csproj.GenerateResource.cache
