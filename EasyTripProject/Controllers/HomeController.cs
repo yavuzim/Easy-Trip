@@ -17,7 +17,7 @@ namespace EasyTripProject.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            var items = contextDb.Blogs.ToList();
+            var items = contextDb.Blogs.Take(10).ToList();
             return View(items);
         }
         public PartialViewResult Partial()
@@ -33,6 +33,16 @@ namespace EasyTripProject.Controllers
         public PartialViewResult PartialBlogs()
         {
             var items = contextDb.Blogs.ToList();
+            return PartialView(items);
+        }
+        public PartialViewResult OurBestPlaces()
+        {
+            var items = contextDb.Blogs.Take(3).ToList();
+            return PartialView(items);
+        }
+        public PartialViewResult OurBestPlacesRight()
+        {
+            var items = contextDb.Blogs.Take(3).OrderByDescending(p => p.BlogId).ToList();
             return PartialView(items);
         }
     }
