@@ -27,7 +27,7 @@ namespace EasyTripProject.Controllers
         }
         public PartialViewResult PartialRight()
         {
-            var items = contextDb.Blogs.Where(p=>p.BlogId==1).ToList();
+            var items = contextDb.Blogs.Where(p=>p.BlogId==3).ToList();
             return PartialView(items);
         }
         public PartialViewResult PartialBlogs()

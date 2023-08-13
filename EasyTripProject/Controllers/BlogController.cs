@@ -30,5 +30,19 @@ namespace EasyTripProject.Controllers
             blogComment.Comment = contextDb.Comments.Where(p => p.BlogId == id).ToList();
             return View(blogComment);
         }
+        [HttpGet]
+        public PartialViewResult MakeComment(int id)
+        {
+            ViewBag.item = id;
+            return PartialView();
+        }
+
+        [HttpPost]
+        public PartialViewResult MakeComment(Comments comments)
+        {
+            contextDb.Comments.Add(comments);
+            contextDb.SaveChanges();
+            return PartialView();
+        }
     }
 }
