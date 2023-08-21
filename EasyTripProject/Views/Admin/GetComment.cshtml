@@ -1,0 +1,24 @@
+﻿@model EasyTripProject.Models.Entities.Comments
+@{
+    ViewBag.Title = "GetComment";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yorum Güncelle</h2>
+<br />
+@using (Html.BeginForm("CommentUpdate", "Admin", FormMethod.Post))
+{
+    <b>@Html.LabelFor(p => p.CommentId)</b>
+    @Html.TextBoxFor(p => p.CommentId, new { @class = "form-control", @readonly = "readonly" }) // @readonly = "readonly"  : textbox enabled=false oldu.
+    <br />
+    <b>@Html.LabelFor(p => p.UserName)</b>
+    @Html.TextBoxFor(p => p.UserName, new { @class = "form-control" })
+    <br />
+    <b>@Html.LabelFor(p => p.Email)</b>
+    @Html.TextBoxFor(p => p.Email, new { @class = "form-control" })
+    <br />
+    <b>@Html.LabelFor(p => p.Comment)</b>
+    @Html.TextAreaFor(p => p.Comment, 15, 1, new { @class = "form-control" }) // 15 satır, 1 sütun
+    <br />
+    <button type="submit" class="btn btn-primary" style="margin-bottom:25px">Yorum Güncelle</button>
+}

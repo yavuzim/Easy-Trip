@@ -54,5 +54,32 @@ namespace EasyTripProject.Controllers
             context.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult CommentList()
+        {
+            var comments = context.Comments.ToList();
+            return View(comments);
+        }
+        public ActionResult RemoveComment(int commentId)
+        {
+            var comment = context.Comments.Find(commentId);
+            context.Comments.Remove(comment);
+            context.SaveChanges();
+            return RedirectToAction("CommentList");
+        }
+        public ActionResult GetComment(int commentId)
+        {
+            var comment = context.Comments.Find(commentId);
+            return View("GetComment", comment);
+        }
+        public ActionResult CommentUpdate(Comments comment)
+        {
+            var getComment = context.Comments.Find(comment.CommentId);
+            getComment.UserName = comment.UserName;
+            getComment.Email = comment.Email;
+            getComment.Comment = comment.Comment;
+            context.SaveChanges();
+
+            return RedirectToAction("CommentList");
+        }
     }
 }
